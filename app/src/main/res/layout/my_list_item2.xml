@@ -13,7 +13,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/textview_number"
-    android:gravity="left"
+    android:gravity="center"
     android:text="1111"
     android:textAlignment="center"
     android:textSize="20sp"

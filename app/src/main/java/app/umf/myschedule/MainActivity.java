@@ -406,28 +406,60 @@ public class MainActivity extends AppCompatActivity {
             switch (numberday) {
                 case 0:
                 {
-                    ArrayList<ArrayList<String>> a=chooseFromDB("monday",1);
-                    ArrayList<String> b=new ArrayList<>();
-                    b.add(a.get(1).get(0));
-                    b.add(a.get(2).get(0));
-                    //b.add(a.get(3).get(1));
-                    ArrayList<String> c=new ArrayList<>();
-                    c.add(a.get(1).get(2)+a.get(1).get(3));
-                    c.add(a.get(2).get(2)+a.get(2).get(3));
-
-
-
-                    listView.setAdapter(new CustomAdapter( getActivity(),b,c));
-
+                    ArrayList<ArrayList<String>> local=chooseFromDB("monday",1);
+                    textView.setText("Monday");
+                    setInListView(listView,local);
+                    break;
                 }
                 case 1:
+                {
+                    ArrayList<ArrayList<String>> local=chooseFromDB("tuesday",1);
+                    textView.setText("Tuesday");
+                    setInListView(listView,local);
+                    break;
+                }
                 case 2:
+                {
+                    ArrayList<ArrayList<String>> local=chooseFromDB("wednesday",1);
+                    textView.setText("Wednesday");
+                    setInListView(listView,local);
+                    break;
+                }
                 case 3:
+                {
+//                    ArrayList<ArrayList<String>> local=chooseFromDB("thursday",1);
+//                    textView.setText("Thursday");
+//                    setInListView(listView,local);
+                    break;
+                }
                 case 4:
+                {
+                    ArrayList<ArrayList<String>> local=chooseFromDB("friday",1);
+                    textView.setText("Friday");
+                    setInListView(listView,local);
+                    break;
+                }
             }
 
             return rootView;
 
+        }
+        private void  setInListView(ListView locallistview, ArrayList<ArrayList<String>> list)
+        {
+            ArrayList<String> b=new ArrayList<>();
+            ArrayList<String> c=new ArrayList<>();
+            for(int i=0;i<list.size();i++)
+            {
+                b.add(list.get(i).get(0));
+
+                c.add(list.get(i).get(1)+"\n"+list.get(i).get(2)+"\n"+list.get(i).get(3));
+
+            }
+
+
+
+
+            locallistview.setAdapter(new CustomAdapter( getActivity(),b,c));
         }
         private ArrayList<ArrayList<String>> chooseFromDB(String day, int when_type)
         {
