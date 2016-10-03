@@ -1,6 +1,7 @@
 package app.umf.myschedule;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -19,10 +20,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 import app.umf.myschedule.Contracts.AudContract;
 import app.umf.myschedule.Contracts.LessonContract;
@@ -401,15 +404,26 @@ public class MainActivity extends AppCompatActivity {
             });
 
             switch (numberday) {
-                case 1:
+                case 0:
                 {
                     ArrayList<ArrayList<String>> a=chooseFromDB("monday",1);
+                    ArrayList<String> b=new ArrayList<>();
+                    b.add(a.get(1).get(0));
+                    b.add(a.get(2).get(0));
+                    //b.add(a.get(3).get(1));
+                    ArrayList<String> c=new ArrayList<>();
+                    c.add(a.get(1).get(2)+a.get(1).get(3));
+                    c.add(a.get(2).get(2)+a.get(2).get(3));
+
+
+
+                    listView.setAdapter(new CustomAdapter( getActivity(),b,c));
 
                 }
+                case 1:
                 case 2:
                 case 3:
                 case 4:
-                case 5:
             }
 
             return rootView;
@@ -419,7 +433,7 @@ public class MainActivity extends AppCompatActivity {
         {
             ArrayList<ArrayList<String>> a=new ArrayList<>();
             FeedReaderDbHelper dbHelper=new FeedReaderDbHelper(getContext());
-            Cursor c=dbHelper.getReadableDatabase().rawQuery("select listoflessons.day,listoflessons.numberlesson,lesson.name, aud.aud,typelesson.type from listoflessons join  aud on listoflessons.id_aud=aud.id " +
+            Cursor c=dbHelper.getReadableDatabase().rawQuery("select listoflessons.numberlesson,lesson.name, aud.aud,typelesson.type from listoflessons join  aud on listoflessons.id_aud=aud.id " +
                     " join lesson on listoflessons.id_lesson=lesson.id " +
                     " join typelesson on listoflessons.type_lessson=typelesson.id " +
                     " join when_type on listoflessons.id_when_type=when_type.id " +
