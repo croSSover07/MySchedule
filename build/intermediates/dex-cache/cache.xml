@@ -3,12 +3,21 @@
 
     <item
         is-multidex="false"
-        jar="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.1.1/jars/classes.jar"
-        jumboMode="true"
+        jar="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/exploded-aar/com.android.support/design/24.1.1/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="24.0.1"
-        sha1="f62e763609f65e47dc6c498760a4accf02776788">
-        <dex dex="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.1.1_8160bd7b8fe88387dbeffdd88e7c5db060b70b23.jar" />
+        sha1="e195bd694d5389acfba27ff4fdfa64c4c65b2c05">
+        <dex dex="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/pre-dexed/debug/com.android.support-design-24.1.1_42eebd08c1695fe3ae5fa76e3edfcc1d4dcf14fa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/umf/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.1.1/support-annotations-24.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="3af19f153122737b372622fa6c81dd11a1c6b999">
+        <dex dex="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/pre-dexed/debug/support-annotations-24.1.1_40f67b932e35badb2929daa71ec345dd597af2be.jar" />
     </item>
     <item
         is-multidex="false"
@@ -22,11 +31,29 @@
     <item
         is-multidex="false"
         jar="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.1.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="c936c1bd42f0c018c18920c7bec619ef056b24f8">
+        <dex dex="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.1.1_28164b163df1534655b55abb549c452eb27551d1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.1.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
         sha1="c936c1bd42f0c018c18920c7bec619ef056b24f8">
         <dex dex="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.1.1_28164b163df1534655b55abb549c452eb27551d1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="1256c10604bb098490eab070d76754ac5ceab35c">
+        <dex dex="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.1.1_1faa9c3ea1f377ef6c2eec7b4d6a583f14d9a28e.jar" />
     </item>
     <item
         is-multidex="false"
@@ -48,21 +75,30 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.1.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="787871951412550519b0222aba3c9df4cea49875">
+        <dex dex="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-24.1.1_6a00b11e48556ac6601c5e749bb353f2ab6d6d10.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.1.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="6d7d803871e3203465f71a163e7af104f807b446">
+        <dex dex="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.1.1_af237e195633d473b8b4642c90428970317aaf74.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.1.1/jars/libs/internal_impl-24.1.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
         sha1="f78c2f395cb096f9dc1dc07e729922b8fcd3c4f5">
         <dex dex="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/pre-dexed/debug/internal_impl-24.1.1_36241645a4ffeb774781665ca43282f7b8e13d64.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.1"
-        sha1="5f171346838c1dbd9c2538030402015513fac8e7">
-        <dex dex="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/pre-dexed/debug/instant-run_d25a80f2bc2f14d4b0ee1c1222f1ea2cb2baafea.jar" />
     </item>
     <item
         is-multidex="false"
@@ -75,6 +111,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.1.1/jars/libs/internal_impl-24.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="f78c2f395cb096f9dc1dc07e729922b8fcd3c4f5">
+        <dex dex="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/pre-dexed/debug/internal_impl-24.1.1_36241645a4ffeb774781665ca43282f7b8e13d64.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -84,11 +129,38 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="f62e763609f65e47dc6c498760a4accf02776788">
+        <dex dex="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.1.1_8160bd7b8fe88387dbeffdd88e7c5db060b70b23.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.1.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="f62e763609f65e47dc6c498760a4accf02776788">
+        <dex dex="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.1.1_8160bd7b8fe88387dbeffdd88e7c5db060b70b23.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="b7f1c9aa419395d487e584f31d0c4c228751b31b">
+        <dex dex="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/pre-dexed/debug/instant-run_d25a80f2bc2f14d4b0ee1c1222f1ea2cb2baafea.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="ac51a4b2f075dd7ca3d1b01d3e9fd1dc9e6fc893">
+        sha1="987bfa3e0364708ef78a0c50df48ad63d6d9e85f">
         <dex dex="/home/umf/AndroidStudioProjects/MySchedule/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_81d98a23b2150e41fdaf2415d6846c649e4662fb.jar" />
     </item>
 

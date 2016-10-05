@@ -1,7 +1,6 @@
 package app.umf.myschedule;
 
 import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -20,16 +19,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.StringTokenizer;
+
 
 import app.umf.myschedule.Contracts.AudContract;
 import app.umf.myschedule.Contracts.LessonContract;
 import app.umf.myschedule.Contracts.ListofLessons;
+import app.umf.myschedule.Contracts.RingsContract;
 import app.umf.myschedule.Contracts.TypeLessonContract;
 import app.umf.myschedule.Contracts.WhenTypeContract;
 
@@ -80,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
 
         mFeedReaderDbHelper = new FeedReaderDbHelper(this);
         insertall();
+        //TODO  добавить бд с расписание звонков
+        //TODO  четность/нечетность недели
 
 
     }
@@ -91,8 +92,9 @@ public class MainActivity extends AppCompatActivity {
         insertAud();
         insertLesson();
         insertListofLessons();
+        insertRings();
     }
-
+//region заполнение
     private void insertListofLessons() {
         SQLiteDatabase db=mFeedReaderDbHelper.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
@@ -337,6 +339,55 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    private void insertRings()
+    {
+        SQLiteDatabase db = mFeedReaderDbHelper.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(RingsContract.COLUMN_ID, 1);
+        contentValues.put(RingsContract.COLUMN_TIME_START, "8:45");
+        contentValues.put(RingsContract.COLUMN_TIME_END, "10:05");
+        long newRowid = db.insert(RingsContract.TABLE_NAME, null, contentValues);
+        contentValues.clear();
+
+        contentValues.put(RingsContract.COLUMN_ID, 2);
+        contentValues.put(RingsContract.COLUMN_TIME_START, "10:15");
+        contentValues.put(RingsContract.COLUMN_TIME_END, "11:35");
+        newRowid = db.insert(RingsContract.TABLE_NAME, null, contentValues);
+        contentValues.clear();
+
+        contentValues.put(RingsContract.COLUMN_ID, 3);
+        contentValues.put(RingsContract.COLUMN_TIME_START, "11:45");
+        contentValues.put(RingsContract.COLUMN_TIME_END, "13:05");
+        newRowid = db.insert(RingsContract.TABLE_NAME, null, contentValues);
+        contentValues.clear();
+
+        contentValues.put(RingsContract.COLUMN_ID, 4);
+        contentValues.put(RingsContract.COLUMN_TIME_START, "13:35");
+        contentValues.put(RingsContract.COLUMN_TIME_END, "14:55");
+        newRowid = db.insert(RingsContract.TABLE_NAME, null, contentValues);
+        contentValues.clear();
+
+        contentValues.put(RingsContract.COLUMN_ID, 5);
+        contentValues.put(RingsContract.COLUMN_TIME_START, "15:05");
+        contentValues.put(RingsContract.COLUMN_TIME_END, "16:25");
+        newRowid = db.insert(RingsContract.TABLE_NAME, null, contentValues);
+        contentValues.clear();
+
+
+        contentValues.put(RingsContract.COLUMN_ID, 6);
+        contentValues.put(RingsContract.COLUMN_TIME_START, "16:35");
+        contentValues.put(RingsContract.COLUMN_TIME_END, "17:55");
+        newRowid = db.insert(RingsContract.TABLE_NAME, null, contentValues);
+        contentValues.clear();
+
+        contentValues.put(RingsContract.COLUMN_ID, 7);
+        contentValues.put(RingsContract.COLUMN_TIME_START, "18:05");
+        contentValues.put(RingsContract.COLUMN_TIME_END, "19:25");
+        newRowid = db.insert(RingsContract.TABLE_NAME, null, contentValues);
+        contentValues.clear();
+    }
+//endregion
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -369,6 +420,7 @@ public class MainActivity extends AppCompatActivity {
          * fragment.
          */
         private static final String ARG_SECTION_NUMBER = "section_number";
+        private   ArrayList<ArrayList<String>> local=new ArrayList<ArrayList<String>>();
 
         public PlaceholderFragment() {
         }
@@ -390,15 +442,18 @@ public class MainActivity extends AppCompatActivity {
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            ListView listView = (ListView) rootView.findViewById(R.id.list_item);
+            final ListView listView = (ListView) rootView.findViewById(R.id.list_item);
 
-            // textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
             int numberday = getArguments().getInt(ARG_SECTION_NUMBER) - 1;
             //запуск detailactivity
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    //TODO: передавать правильно в интент
                     Intent intent = new Intent(getActivity(), DetailActivity.class);
+                    String text_numberpair=((TextView) view.findViewById(R.id.textview_number)).getText().toString();
+                    ArrayList<String> aa=findByNumber(local,text_numberpair);
+                    intent.putStringArrayListExtra("array_info",aa);
                     startActivity(intent);
                 }
             });
@@ -406,27 +461,29 @@ public class MainActivity extends AppCompatActivity {
             switch (numberday) {
                 case 0:
                 {
-                    ArrayList<ArrayList<String>> local=chooseFromDB("monday",1);
+
+                    local=chooseFromDB("monday",1);
                     textView.setText("Monday");
                     setInListView(listView,local);
                     break;
                 }
                 case 1:
                 {
-                    ArrayList<ArrayList<String>> local=chooseFromDB("tuesday",1);
+                    local=chooseFromDB("tuesday",1);
                     textView.setText("Tuesday");
                     setInListView(listView,local);
                     break;
                 }
                 case 2:
                 {
-                    ArrayList<ArrayList<String>> local=chooseFromDB("wednesday",1);
+                    local=chooseFromDB("wednesday",1);
                     textView.setText("Wednesday");
                     setInListView(listView,local);
                     break;
                 }
                 case 3:
                 {
+                    //TODO добавить четверг и проверки на null
 //                    ArrayList<ArrayList<String>> local=chooseFromDB("thursday",1);
 //                    textView.setText("Thursday");
 //                    setInListView(listView,local);
@@ -434,7 +491,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 case 4:
                 {
-                    ArrayList<ArrayList<String>> local=chooseFromDB("friday",1);
+                    local=chooseFromDB("friday",1);
                     textView.setText("Friday");
                     setInListView(listView,local);
                     break;
@@ -444,31 +501,40 @@ public class MainActivity extends AppCompatActivity {
             return rootView;
 
         }
+        private ArrayList<String> findByNumber(ArrayList<ArrayList<String>> list,String number)
+        {
+
+
+            for (ArrayList<String> a:list) {
+               if( a.contains(number)) {
+                   return a ;
+               }
+            }
+
+            return null;
+        }
         private void  setInListView(ListView locallistview, ArrayList<ArrayList<String>> list)
         {
-            ArrayList<String> b=new ArrayList<>();
-            ArrayList<String> c=new ArrayList<>();
+            ArrayList<String> b=new ArrayList<>();//список номеров пар
+            ArrayList<String> c=new ArrayList<>();//список string в которой содержиться get(1)-lesson.name+(get(2) -aud.aud)+(get(3)- typelesson.type)
             for(int i=0;i<list.size();i++)
             {
                 b.add(list.get(i).get(0));
-
                 c.add(list.get(i).get(1)+"\n"+list.get(i).get(2)+"\n"+list.get(i).get(3));
-
             }
-
-
-
-
             locallistview.setAdapter(new CustomAdapter( getActivity(),b,c));
         }
         private ArrayList<ArrayList<String>> chooseFromDB(String day, int when_type)
         {
             ArrayList<ArrayList<String>> a=new ArrayList<>();
             FeedReaderDbHelper dbHelper=new FeedReaderDbHelper(getContext());
-            Cursor c=dbHelper.getReadableDatabase().rawQuery("select listoflessons.numberlesson,lesson.name, aud.aud,typelesson.type from listoflessons join  aud on listoflessons.id_aud=aud.id " +
-                    " join lesson on listoflessons.id_lesson=lesson.id " +
-                    " join typelesson on listoflessons.type_lessson=typelesson.id " +
-                    " join when_type on listoflessons.id_when_type=when_type.id " +
+            Cursor c=dbHelper.getReadableDatabase().rawQuery("select listoflessons.numberlesson,lesson.name, " +
+                    "aud.aud,typelesson.type,rings.time_start,rings.time_end,lesson.teacher,when_type.type " +
+                    "from listoflessons   join  aud on listoflessons.id_aud=aud.id " +
+                                        " join lesson on listoflessons.id_lesson=lesson.id " +
+                                        " join typelesson on listoflessons.type_lessson=typelesson.id " +
+                                        " join when_type on listoflessons.id_when_type=when_type.id " +
+                                        " join rings on listoflessons.numberlesson=rings.id"+
                     " where listoflessons.day=\""+day+"\"  and ( when_type.id="+when_type+" or when_type.id=3	)	",null);
             if(c.moveToFirst())
             {

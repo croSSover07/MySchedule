@@ -12,4 +12,226 @@
     tools:context="app.umf.myschedule.DetailActivity"
     tools:showIn="@layout/activity_detail">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="40sp"
+            android:format24Hour="kk:mm"
+            android:format12Hour="h:mm"
+            android:textAlignment="center"
+            android:gravity="top|center" />
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchColumns="*"
+            android:weightSum="8"
+            >
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffff00"
+                android:layout_weight="1">
+                <TextView
+                    android:text="время"
+                    android:layout_height="match_parent"
+                    android:background="#f11f1f"
+                    android:textSize="14sp"
+                    android:gravity="center">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/textView_time"
+                    android:text="Teac11her"
+                    android:layout_height="match_parent"
+                    android:background="#88ca5f"
+                    android:textSize="14sp"
+                    android:gravity="center">
+
+                </TextView>
+
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffff00"
+                android:layout_weight="1">
+                <TextView
+                    android:text="День"
+                    android:background="#f11f1f"
+                    android:layout_height="match_parent"
+                    android:textSize="14sp"
+                    android:gravity="center">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/textView_day"
+                    android:text="Teac11her"
+                    android:layout_height="match_parent"
+                    android:background="#88ca5f"
+                    android:textSize="14sp"
+                    android:gravity="center">
+
+                </TextView>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffff00"
+                android:layout_weight="1">
+                <TextView
+                    android:text="номер"
+                    android:background="#f11f1f"
+                    android:layout_height="match_parent"
+                    android:textSize="14sp"
+                    android:gravity="center">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/textView_number"
+                    android:text="Teac11her"
+                    android:layout_height="match_parent"
+                    android:background="#88ca5f"
+                    android:textSize="14sp"
+                    android:gravity="center">
+
+                </TextView>
+
+            </TableRow>
+            <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffff00"
+            android:layout_weight="1">
+            <TextView
+                android:text="название"
+                android:background="#f11f1f"
+                android:layout_height="match_parent"
+                android:textSize="14sp"
+                android:gravity="center">
+
+            </TextView>
+            <TextView
+                android:id="@+id/textView_name"
+                android:text="Teac11her"
+                android:layout_height="match_parent"
+                android:background="#88ca5f"
+                android:textSize="14sp"
+                android:gravity="center">
+
+            </TextView>
+
+        </TableRow>
+            <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffff00"
+            android:layout_weight="1">
+            <TextView
+                android:text="преподаватель"
+                android:layout_height="match_parent"
+                android:background="#f11f1f"
+                android:textSize="14sp"
+                android:gravity="center">
+
+            </TextView>
+            <TextView
+                android:id="@+id/textView_teacher"
+                android:text="Teac11her"
+                android:layout_height="match_parent"
+                android:background="#88ca5f"
+                android:textSize="14sp"
+                android:gravity="center">
+
+            </TextView>
+
+        </TableRow>
+            <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffff00"
+            android:layout_weight="1"    >
+            <TextView
+                android:text="тип"
+                android:layout_height="match_parent"
+                android:background="#f11f1f"
+                android:textSize="14sp"
+                android:gravity="center">
+
+            </TextView>
+            <TextView
+                android:id="@+id/textView_type"
+                android:text="Teac11her"
+                android:layout_height="match_parent"
+                android:background="#88ca5f"
+                android:textSize="14sp"
+                android:gravity="center">
+
+            </TextView>
+
+        </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffff00"
+                android:layout_weight="1">
+                <TextView
+                    android:text="аудитория"
+                    android:layout_height="match_parent"
+                    android:background="#f11f1f"
+                    android:textSize="14sp"
+                    android:gravity="center">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/textView_aud"
+                    android:text="Teac11her"
+                    android:layout_height="match_parent"
+                    android:background="#88ca5f"
+                    android:textSize="14sp"
+                    android:gravity="center">
+
+                </TextView>
+
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffff00"
+                android:layout_weight="1">
+                <TextView
+                    android:text="неделя"
+                    android:layout_height="match_parent"
+                    android:background="#f11f1f"
+                    android:textSize="14sp"
+                    android:gravity="center">
+
+                </TextView>
+                <TextView
+                    android:id="@+id/textView_weektype"
+                    android:text="Teac11her"
+                    android:layout_height="match_parent"
+                    android:background="#88ca5f"
+                    android:textSize="14sp"
+                    android:gravity="center">
+
+                </TextView>
+
+            </TableRow>
+
+
+
+        </TableLayout>
+
+
+
+
+
+    </LinearLayout>
 </RelativeLayout>

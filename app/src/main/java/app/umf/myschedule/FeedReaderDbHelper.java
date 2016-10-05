@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import app.umf.myschedule.Contracts.AudContract;
 import app.umf.myschedule.Contracts.LessonContract;
 import app.umf.myschedule.Contracts.ListofLessons;
+import app.umf.myschedule.Contracts.RingsContract;
 import app.umf.myschedule.Contracts.TypeLessonContract;
 import app.umf.myschedule.Contracts.WhenTypeContract;
 
@@ -61,6 +62,12 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
                     AudContract.COLUMN_ID+" INTEGER PRIMARY KEY,"+
                     AudContract.COLUMN_AUD+TEXT_TYPE+
                     " )";
+    private final String SQL_CREATE_ENTRIES6=
+            "CREATE TABLE "+ RingsContract.TABLE_NAME+" ("+
+                    RingsContract.COLUMN_ID+" INTEGER PRIMARY KEY,"+
+                    RingsContract.COLUMN_TIME_START+TEXT_TYPE+ COMMA_SEP+
+                    RingsContract.COLUMN_TIME_END+TEXT_TYPE+
+                    " )";
 
 
 
@@ -76,7 +83,8 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
             "DROP TABLE IF EXISTS " + WhenTypeContract.TABLE_NAME;
     private static final String SQL_DELETE_ENTRIES5 =
             "DROP TABLE IF EXISTS " + AudContract.TABLE_NAME;
-
+    private static final String SQL_DELETE_ENTRIES6=
+            "DROP TABLE IF EXISTS " + RingsContract.TABLE_NAME;
     public FeedReaderDbHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
@@ -91,6 +99,7 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(SQL_CREATE_ENTRIES3);
         sqLiteDatabase.execSQL(SQL_CREATE_ENTRIES2);
         sqLiteDatabase.execSQL(SQL_CREATE_ENTRIES);
+        sqLiteDatabase.execSQL(SQL_CREATE_ENTRIES6);
     }
 
     @Override
@@ -100,6 +109,7 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(SQL_DELETE_ENTRIES3);
         sqLiteDatabase.execSQL(SQL_DELETE_ENTRIES4);
         sqLiteDatabase.execSQL(SQL_DELETE_ENTRIES5);
+        sqLiteDatabase.execSQL(SQL_DELETE_ENTRIES6);
 
 
         onCreate(sqLiteDatabase);
