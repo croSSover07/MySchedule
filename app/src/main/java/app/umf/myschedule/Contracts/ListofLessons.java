@@ -11,7 +11,7 @@ public final class ListofLessons {
     public final static String COLUMN_NLESS="numberlesson";//number lesson
     public final static String COLUMN_LESSON_ID="id_lesson";
     public final static String COLUMN_WHEN_TYPE="id_when_type";
-    public final static String COLUMN_TYPE_LESSON="type_lessson";
+    public final static String COLUMN_TYPE_LESSON="id_type_lessson";
     public final static String COLUMN_AUD_ID="id_aud";
 
 }

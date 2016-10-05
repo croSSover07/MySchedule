@@ -7,5 +7,5 @@ package app.umf.myschedule.Contracts;
 public final class WhenTypeContract {
     public final static String TABLE_NAME="when_type";
     public final static String COLUMN_ID="id";
-    public final static String COLUMN_TYPE="type";
+    public final static String COLUMN_TYPE="type_week";
 }

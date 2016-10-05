@@ -35,13 +35,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#ffff00"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:weightSum="4"
+                >
                 <TextView
                     android:text="время"
                     android:layout_height="match_parent"
                     android:background="#f11f1f"
                     android:textSize="14sp"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:layout_weight="1">
 
                 </TextView>
                 <TextView
@@ -50,7 +53,8 @@
                     android:layout_height="match_parent"
                     android:background="#88ca5f"
                     android:textSize="14sp"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:layout_weight="3">
 
                 </TextView>
 
@@ -59,13 +63,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#ffff00"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:weightSum="4"
+                >
                 <TextView
                     android:text="День"
                     android:background="#f11f1f"
                     android:layout_height="match_parent"
                     android:textSize="14sp"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:layout_weight="1">
 
                 </TextView>
                 <TextView
@@ -74,7 +81,8 @@
                     android:layout_height="match_parent"
                     android:background="#88ca5f"
                     android:textSize="14sp"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:layout_weight="3">
 
                 </TextView>
 
@@ -84,13 +92,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#ffff00"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:weightSum="4">
                 <TextView
                     android:text="номер"
                     android:background="#f11f1f"
                     android:layout_height="match_parent"
                     android:textSize="14sp"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:layout_weight="1">
 
                 </TextView>
                 <TextView
@@ -99,46 +109,56 @@
                     android:layout_height="match_parent"
                     android:background="#88ca5f"
                     android:textSize="14sp"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:layout_weight="3">
 
                 </TextView>
 
             </TableRow>
             <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#ffff00"
-            android:layout_weight="1">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffff00"
+                android:layout_weight="1"
+                android:weightSum="4"    >
             <TextView
                 android:text="название"
                 android:background="#f11f1f"
                 android:layout_height="match_parent"
                 android:textSize="14sp"
-                android:gravity="center">
+                android:gravity="center"
+                android:layout_weight="1">
 
             </TextView>
             <TextView
                 android:id="@+id/textView_name"
-                android:text="Teac11her"
+                android:text=""
+                android:gravity="center"
                 android:layout_height="match_parent"
+                android:layout_width="wrap_content"
                 android:background="#88ca5f"
                 android:textSize="14sp"
-                android:gravity="center">
+                android:layout_weight="3"
+                android:maxLines="10"
+                android:minLines="2"
+                 >
 
             </TextView>
 
         </TableRow>
             <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#ffff00"
-            android:layout_weight="1">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffff00"
+                android:layout_weight="1"
+                android:weightSum="4">
             <TextView
                 android:text="преподаватель"
                 android:layout_height="match_parent"
                 android:background="#f11f1f"
                 android:textSize="14sp"
-                android:gravity="center">
+                android:gravity="center"
+                android:layout_weight="1">
 
             </TextView>
             <TextView
@@ -147,22 +167,25 @@
                 android:layout_height="match_parent"
                 android:background="#88ca5f"
                 android:textSize="14sp"
-                android:gravity="center">
+                android:gravity="center"
+                android:layout_weight="3">
 
             </TextView>
 
         </TableRow>
             <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#ffff00"
-            android:layout_weight="1"    >
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffff00"
+                android:layout_weight="1"
+                android:weightSum="4">
             <TextView
                 android:text="тип"
                 android:layout_height="match_parent"
                 android:background="#f11f1f"
                 android:textSize="14sp"
-                android:gravity="center">
+                android:gravity="center"
+                android:layout_weight="1">
 
             </TextView>
             <TextView
@@ -171,7 +194,8 @@
                 android:layout_height="match_parent"
                 android:background="#88ca5f"
                 android:textSize="14sp"
-                android:gravity="center">
+                android:gravity="center"
+                android:layout_weight="3">
 
             </TextView>
 
@@ -180,13 +204,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#ffff00"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:weightSum="4">
                 <TextView
                     android:text="аудитория"
                     android:layout_height="match_parent"
                     android:background="#f11f1f"
                     android:textSize="14sp"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:layout_weight="1">
 
                 </TextView>
                 <TextView
@@ -195,7 +221,8 @@
                     android:layout_height="match_parent"
                     android:background="#88ca5f"
                     android:textSize="14sp"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:layout_weight="3">
 
                 </TextView>
 
@@ -204,13 +231,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#ffff00"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:weightSum="4">
                 <TextView
                     android:text="неделя"
                     android:layout_height="match_parent"
                     android:background="#f11f1f"
                     android:textSize="14sp"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:layout_weight="1">
 
                 </TextView>
                 <TextView
@@ -219,7 +248,8 @@
                     android:layout_height="match_parent"
                     android:background="#88ca5f"
                     android:textSize="14sp"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:layout_weight="3">
 
                 </TextView>
 

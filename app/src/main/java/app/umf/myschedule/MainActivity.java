@@ -23,6 +23,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 import app.umf.myschedule.Contracts.AudContract;
@@ -79,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
         mFeedReaderDbHelper = new FeedReaderDbHelper(this);
         insertall();
-        //TODO  добавить бд с расписание звонков
+
         //TODO  четность/нечетность недели
 
 
@@ -420,7 +421,7 @@ public class MainActivity extends AppCompatActivity {
          * fragment.
          */
         private static final String ARG_SECTION_NUMBER = "section_number";
-        private   ArrayList<ArrayList<String>> local=new ArrayList<ArrayList<String>>();
+        private   ArrayList<HashMap<String,String>> local=new ArrayList<HashMap<String,String>>();
 
         public PlaceholderFragment() {
         }
@@ -452,8 +453,8 @@ public class MainActivity extends AppCompatActivity {
                     //TODO: передавать правильно в интент
                     Intent intent = new Intent(getActivity(), DetailActivity.class);
                     String text_numberpair=((TextView) view.findViewById(R.id.textview_number)).getText().toString();
-                    ArrayList<String> aa=findByNumber(local,text_numberpair);
-                    intent.putStringArrayListExtra("array_info",aa);
+                    HashMap<String,String> aa=findByNumber(local,text_numberpair);
+                    intent.putExtra("infohashmap",aa);
                     startActivity(intent);
                 }
             });
@@ -499,50 +500,53 @@ public class MainActivity extends AppCompatActivity {
             return rootView;
 
         }
-        private ArrayList<String> findByNumber(ArrayList<ArrayList<String>> list,String number)
+        private HashMap<String,String> findByNumber(ArrayList<HashMap<String,String>> list,String number)
         {
 
-
-            for (ArrayList<String> a:list) {
-               if( a.contains(number)) {
+//поменять
+            //вродебы ок
+            for (HashMap<String,String> a:list) {
+               if( a.containsValue(number)) {
                    return a ;
                }
             }
 
             return null;
         }
-        private void  setInListView(ListView locallistview, ArrayList<ArrayList<String>> list)
-        {
+        private void  setInListView(ListView locallistview, ArrayList<HashMap<String,String>> list)
+        {//поменять//вроде бы ок
             ArrayList<String> b=new ArrayList<>();//список номеров пар
             ArrayList<String> c=new ArrayList<>();//список string в которой содержиться get(1)-lesson.name+(get(2) -aud.aud)+(get(3)- typelesson.type)
             for(int i=0;i<list.size();i++)
             {
-                b.add(list.get(i).get(0));
-                c.add(list.get(i).get(1)+"\n"+list.get(i).get(2)+"\n"+list.get(i).get(3));
+                b.add(list.get(i).get(ListofLessons.COLUMN_NLESS));
+                c.add(list.get(i).get(LessonContract.COLUMN_NAME)+"\n"+
+                        list.get(i).get(AudContract.COLUMN_AUD)+"\n"+
+                        list.get(i).get(TypeLessonContract.COLUMN_TYPE));
             }
             locallistview.setAdapter(new CustomAdapter( getActivity(),b,c));
         }
-        private ArrayList<ArrayList<String>> chooseFromDB(String day, int when_type)
+        private ArrayList<HashMap<String,String>> chooseFromDB(String day, int when_type)
         {
-            ArrayList<ArrayList<String>> a=new ArrayList<>();
+            ArrayList<HashMap<String,String>> a=new ArrayList<>();
             FeedReaderDbHelper dbHelper=new FeedReaderDbHelper(getContext());
             Cursor c=dbHelper.getReadableDatabase().rawQuery("select listoflessons.numberlesson,lesson.name, " +
-                    "aud.aud,typelesson.type,rings.time_start,rings.time_end,lesson.teacher,when_type.type " +
+                    "aud.aud,typelesson.type_lesson,rings.time_start,rings.time_end,lesson.teacher,when_type.type_week,listoflessons.day " +
                     "from listoflessons   join  aud on listoflessons.id_aud=aud.id " +
                                         " join lesson on listoflessons.id_lesson=lesson.id " +
-                                        " join typelesson on listoflessons.type_lessson=typelesson.id " +
+                                        " join typelesson on listoflessons.id_type_lessson=typelesson.id " +
                                         " join when_type on listoflessons.id_when_type=when_type.id " +
                                         " join rings on listoflessons.numberlesson=rings.id"+
                     " where listoflessons.day=\""+day+"\"  and ( when_type.id="+when_type+" or when_type.id=3	)	",null);
             if(c.moveToFirst())
             {
                 do {
-                    ArrayList<String> arrayList=new ArrayList<>();
+                    HashMap<String,String> hashMap=new HashMap<String,String>();
                     for(int i=0 ;i<c.getColumnCount();i++)
                     {
-                        arrayList.add(c.getString(i));
+                        hashMap.put(c.getColumnName(i),c.getString(i));
                     }
-                    a.add(arrayList);
+                    a.add(hashMap);
 
                 }
                 while(c.moveToNext());
