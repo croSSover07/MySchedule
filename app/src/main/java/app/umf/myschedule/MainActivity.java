@@ -484,9 +484,7 @@ public class MainActivity extends AppCompatActivity {
                 case 3:
                 {
                     //TODO добавить четверг и проверки на null
-//                    ArrayList<ArrayList<String>> local=chooseFromDB("thursday",1);
-//                    textView.setText("Thursday");
-//                    setInListView(listView,local);
+//
                     break;
                 }
                 case 4:
