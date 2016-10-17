@@ -4,12 +4,15 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import app.umf.myschedule.Contracts.AudContract;
-import app.umf.myschedule.Contracts.LessonContract;
-import app.umf.myschedule.Contracts.ListofLessons;
-import app.umf.myschedule.Contracts.RingsContract;
-import app.umf.myschedule.Contracts.TypeLessonContract;
-import app.umf.myschedule.Contracts.WhenTypeContract;
+import app.umf.myschedule.Contracts.AudContract.AudEntry;
+import app.umf.myschedule.Contracts.LessonContract.LessonEntry;
+import app.umf.myschedule.Contracts.ListofLessonsContracts.ListofLessonsEntry;
+import app.umf.myschedule.Contracts.RingsContract.RingsEntry;
+import app.umf.myschedule.Contracts.TypeLessonContract.TypeLessonEntry;
+import app.umf.myschedule.Contracts.WhenTypeContract.WhenTypeEntry;
+
+;
+;
 
 /**
  * Created by UMF on 23.09.2016.
@@ -27,46 +30,46 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
 
 
     private   final String SQL_CREATE_ENTRIES =
-            "CREATE TABLE " + ListofLessons.TABLE_NAME+" ("+
-                    ListofLessons.COLUMN_ID+" INTEGER PRIMARY KEY,"+
-                    ListofLessons.COLUMN_DAY+TEXT_TYPE+" NOT NULL" +COMMA_SEP +
-                    ListofLessons.COLUMN_LESSON_ID+INT_TYPE+" NOT NULL" +COMMA_SEP +
-                    ListofLessons.COLUMN_NLESS+INT_TYPE+" NOT NULL" +COMMA_SEP +
-                    ListofLessons.COLUMN_WHEN_TYPE+INT_TYPE+" NOT NULL" +COMMA_SEP +
-                    ListofLessons.COLUMN_AUD_ID+INT_TYPE+" NOT NULL"+COMMA_SEP+
-                    ListofLessons.COLUMN_TYPE_LESSON+INT_TYPE+" NOT NULL"+COMMA_SEP+
-                    "FOREIGN KEY("+ListofLessons.COLUMN_LESSON_ID+") REFERENCES "  + LessonContract.TABLE_NAME+"("+LessonContract.COLUMN_ID+")"  +COMMA_SEP+
-                    "FOREIGN KEY("+ListofLessons.COLUMN_TYPE_LESSON+") REFERENCES "  + TypeLessonContract.TABLE_NAME+"("+TypeLessonContract.COLUMN_ID+")"  +COMMA_SEP+
-                    "FOREIGN KEY("+ListofLessons.COLUMN_AUD_ID+") REFERENCES "  + AudContract.TABLE_NAME+"("+AudContract.COLUMN_ID+")"  +COMMA_SEP+
-                    "FOREIGN KEY("+ListofLessons.COLUMN_WHEN_TYPE+") REFERENCES "  + WhenTypeContract.TABLE_NAME+"("+TypeLessonContract.COLUMN_ID+")"  +
+            "CREATE TABLE " + ListofLessonsEntry.TABLE_NAME+" ("+
+                    ListofLessonsEntry.COLUMN_ID+" INTEGER PRIMARY KEY,"+
+                    ListofLessonsEntry.COLUMN_DAY+TEXT_TYPE+" NOT NULL" +COMMA_SEP +
+                    ListofLessonsEntry.COLUMN_LESSON_ID+INT_TYPE+" NOT NULL" +COMMA_SEP +
+                    ListofLessonsEntry.COLUMN_NLESS+INT_TYPE+" NOT NULL" +COMMA_SEP +
+                    ListofLessonsEntry.COLUMN_WHEN_TYPE+INT_TYPE+" NOT NULL" +COMMA_SEP +
+                    ListofLessonsEntry.COLUMN_AUD_ID+INT_TYPE+" NOT NULL"+COMMA_SEP+
+                    ListofLessonsEntry.COLUMN_TYPE_LESSON+INT_TYPE+" NOT NULL"+COMMA_SEP+
+                    "FOREIGN KEY("+ ListofLessonsEntry.COLUMN_LESSON_ID+") REFERENCES "  + LessonEntry.TABLE_NAME+"("+LessonEntry.COLUMN_ID+")"  +COMMA_SEP+
+                    "FOREIGN KEY("+ ListofLessonsEntry.COLUMN_TYPE_LESSON+") REFERENCES "  + TypeLessonEntry.TABLE_NAME+"("+TypeLessonEntry.COLUMN_ID+")"  +COMMA_SEP+
+                    "FOREIGN KEY("+ ListofLessonsEntry.COLUMN_AUD_ID+") REFERENCES "  + AudEntry.TABLE_NAME+"("+AudEntry.COLUMN_ID+")"  +COMMA_SEP+
+                    "FOREIGN KEY("+ ListofLessonsEntry.COLUMN_WHEN_TYPE+") REFERENCES "  + WhenTypeEntry.TABLE_NAME+"("+ WhenTypeEntry.COLUMN_ID+")"  +
                     " )";
 
     private final String SQL_CREATE_ENTRIES2=
-            "CREATE TABLE " + LessonContract.TABLE_NAME+" ("+
-                    LessonContract.COLUMN_ID+ " INTEGER PRIMARY KEY,"+
-                    LessonContract.COLUMN_NAME+ TEXT_TYPE+ " NOT NULL"+COMMA_SEP +
-                    LessonContract.COLUMN_TEACHER+ TEXT_TYPE+ " NOT NULL"+
+            "CREATE TABLE " + LessonEntry.TABLE_NAME+" ("+
+                    LessonEntry.COLUMN_ID+ " INTEGER PRIMARY KEY,"+
+                    LessonEntry.COLUMN_NAME+ TEXT_TYPE+ " NOT NULL"+COMMA_SEP +
+                    LessonEntry.COLUMN_TEACHER+ TEXT_TYPE+ " NOT NULL"+
                     " )";
     private final String SQL_CREATE_ENTRIES3=
-            "CREATE TABLE "+ WhenTypeContract.TABLE_NAME+" ("+
-                    WhenTypeContract.COLUMN_ID+" INTEGER PRIMARY KEY,"+
-                    WhenTypeContract.COLUMN_TYPE+TEXT_TYPE+
+            "CREATE TABLE "+ WhenTypeEntry.TABLE_NAME+" ("+
+                    WhenTypeEntry.COLUMN_ID+" INTEGER PRIMARY KEY,"+
+                    WhenTypeEntry.COLUMN_TYPE+TEXT_TYPE+
                     " )";
     private final String SQL_CREATE_ENTRIES4=
-            "CREATE TABLE "+ TypeLessonContract.TABLE_NAME+" ("+
-                    TypeLessonContract.COLUMN_ID+" INTEGER PRIMARY KEY,"+
-                    TypeLessonContract.COLUMN_TYPE+TEXT_TYPE+
+            "CREATE TABLE "+ TypeLessonEntry.TABLE_NAME+" ("+
+                    TypeLessonEntry.COLUMN_ID+" INTEGER PRIMARY KEY,"+
+                    TypeLessonEntry.COLUMN_TYPE+TEXT_TYPE+
                     " )";
     private final String SQL_CREATE_ENTRIES5=
-            "CREATE TABLE "+ AudContract.TABLE_NAME+" ("+
-                    AudContract.COLUMN_ID+" INTEGER PRIMARY KEY,"+
-                    AudContract.COLUMN_AUD+TEXT_TYPE+
+            "CREATE TABLE "+ AudEntry.TABLE_NAME+" ("+
+                    AudEntry.COLUMN_ID+" INTEGER PRIMARY KEY,"+
+                    AudEntry.COLUMN_AUD+TEXT_TYPE+
                     " )";
     private final String SQL_CREATE_ENTRIES6=
-            "CREATE TABLE "+ RingsContract.TABLE_NAME+" ("+
-                    RingsContract.COLUMN_ID+" INTEGER PRIMARY KEY,"+
-                    RingsContract.COLUMN_TIME_START+TEXT_TYPE+ COMMA_SEP+
-                    RingsContract.COLUMN_TIME_END+TEXT_TYPE+
+            "CREATE TABLE "+ RingsEntry.TABLE_NAME+" ("+
+                    RingsEntry.COLUMN_ID+" INTEGER PRIMARY KEY,"+
+                    RingsEntry.COLUMN_TIME_START+TEXT_TYPE+ COMMA_SEP+
+                    RingsEntry.COLUMN_TIME_END+TEXT_TYPE+
                     " )";
 
 
@@ -74,17 +77,17 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
 
 
     private static final String SQL_DELETE_ENTRIES =
-            "DROP TABLE IF EXISTS " + ListofLessons.TABLE_NAME;
+            "DROP TABLE IF EXISTS " + ListofLessonsEntry.TABLE_NAME;
     private static final String SQL_DELETE_ENTRIES2 =
-            "DROP TABLE IF EXISTS " + LessonContract.TABLE_NAME;
+            "DROP TABLE IF EXISTS " + LessonEntry.TABLE_NAME;
     private static final String SQL_DELETE_ENTRIES4 =
-            "DROP TABLE IF EXISTS " + TypeLessonContract.TABLE_NAME;
+            "DROP TABLE IF EXISTS " + TypeLessonEntry.TABLE_NAME;
     private static final String SQL_DELETE_ENTRIES3 =
-            "DROP TABLE IF EXISTS " + WhenTypeContract.TABLE_NAME;
+            "DROP TABLE IF EXISTS " + WhenTypeEntry.TABLE_NAME;
     private static final String SQL_DELETE_ENTRIES5 =
-            "DROP TABLE IF EXISTS " + AudContract.TABLE_NAME;
+            "DROP TABLE IF EXISTS " + AudEntry.TABLE_NAME;
     private static final String SQL_DELETE_ENTRIES6=
-            "DROP TABLE IF EXISTS " + RingsContract.TABLE_NAME;
+            "DROP TABLE IF EXISTS " + RingsEntry.TABLE_NAME;
     public FeedReaderDbHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }

@@ -25,13 +25,12 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-
-import app.umf.myschedule.Contracts.AudContract;
-import app.umf.myschedule.Contracts.LessonContract;
-import app.umf.myschedule.Contracts.ListofLessons;
-import app.umf.myschedule.Contracts.RingsContract;
-import app.umf.myschedule.Contracts.TypeLessonContract;
-import app.umf.myschedule.Contracts.WhenTypeContract;
+import app.umf.myschedule.Contracts.AudContract.AudEntry;
+import app.umf.myschedule.Contracts.LessonContract.LessonEntry;
+import app.umf.myschedule.Contracts.ListofLessonsContracts.ListofLessonsEntry;
+import app.umf.myschedule.Contracts.RingsContract.RingsEntry;
+import app.umf.myschedule.Contracts.TypeLessonContract.TypeLessonEntry;
+import app.umf.myschedule.Contracts.WhenTypeContract.WhenTypeEntry;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -100,122 +99,122 @@ public class MainActivity extends AppCompatActivity {
         SQLiteDatabase db=mFeedReaderDbHelper.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
 
-        contentValues.put(ListofLessons.COLUMN_ID,1);
-        contentValues.put(ListofLessons.COLUMN_DAY,"monday");
-        contentValues.put(ListofLessons.COLUMN_NLESS,2);
-        contentValues.put(ListofLessons.COLUMN_LESSON_ID,1);
-        contentValues.put(ListofLessons.COLUMN_AUD_ID,1);
-        contentValues.put(ListofLessons.COLUMN_TYPE_LESSON,1);
-        contentValues.put(ListofLessons.COLUMN_WHEN_TYPE,3);
-        long newRowid=db.insert(ListofLessons.TABLE_NAME,null,contentValues);
+        contentValues.put(ListofLessonsEntry.COLUMN_ID,1);
+        contentValues.put(ListofLessonsEntry.COLUMN_DAY,"monday");
+        contentValues.put(ListofLessonsEntry.COLUMN_NLESS,2);
+        contentValues.put(ListofLessonsEntry.COLUMN_LESSON_ID,1);
+        contentValues.put(ListofLessonsEntry.COLUMN_AUD_ID,1);
+        contentValues.put(ListofLessonsEntry.COLUMN_TYPE_LESSON,1);
+        contentValues.put(ListofLessonsEntry.COLUMN_WHEN_TYPE,3);
+        long newRowid=db.insert(ListofLessonsEntry.TABLE_NAME,null,contentValues);
         contentValues.clear();
 
-        contentValues.put(ListofLessons.COLUMN_ID,2);
-        contentValues.put(ListofLessons.COLUMN_DAY,"monday");
-        contentValues.put(ListofLessons.COLUMN_NLESS,3);
-        contentValues.put(ListofLessons.COLUMN_LESSON_ID,1);
-        contentValues.put(ListofLessons.COLUMN_AUD_ID,3);
-        contentValues.put(ListofLessons.COLUMN_TYPE_LESSON,3);
-        contentValues.put(ListofLessons.COLUMN_WHEN_TYPE,1);
-        newRowid=db.insert(ListofLessons.TABLE_NAME,null,contentValues);
+        contentValues.put(ListofLessonsEntry.COLUMN_ID,2);
+        contentValues.put(ListofLessonsEntry.COLUMN_DAY,"monday");
+        contentValues.put(ListofLessonsEntry.COLUMN_NLESS,3);
+        contentValues.put(ListofLessonsEntry.COLUMN_LESSON_ID,1);
+        contentValues.put(ListofLessonsEntry.COLUMN_AUD_ID,3);
+        contentValues.put(ListofLessonsEntry.COLUMN_TYPE_LESSON,3);
+        contentValues.put(ListofLessonsEntry.COLUMN_WHEN_TYPE,1);
+        newRowid=db.insert(ListofLessonsEntry.TABLE_NAME,null,contentValues);
         contentValues.clear();
 
-        contentValues.put(ListofLessons.COLUMN_ID,3);
-        contentValues.put(ListofLessons.COLUMN_DAY,"monday");
-        contentValues.put(ListofLessons.COLUMN_NLESS,3);
-        contentValues.put(ListofLessons.COLUMN_LESSON_ID,2);
-        contentValues.put(ListofLessons.COLUMN_AUD_ID,3);
-        contentValues.put(ListofLessons.COLUMN_TYPE_LESSON,2);
-        contentValues.put(ListofLessons.COLUMN_WHEN_TYPE,2);
-        newRowid=db.insert(ListofLessons.TABLE_NAME,null,contentValues);
+        contentValues.put(ListofLessonsEntry.COLUMN_ID,3);
+        contentValues.put(ListofLessonsEntry.COLUMN_DAY,"monday");
+        contentValues.put(ListofLessonsEntry.COLUMN_NLESS,3);
+        contentValues.put(ListofLessonsEntry.COLUMN_LESSON_ID,2);
+        contentValues.put(ListofLessonsEntry.COLUMN_AUD_ID,3);
+        contentValues.put(ListofLessonsEntry.COLUMN_TYPE_LESSON,2);
+        contentValues.put(ListofLessonsEntry.COLUMN_WHEN_TYPE,2);
+        newRowid=db.insert(ListofLessonsEntry.TABLE_NAME,null,contentValues);
         contentValues.clear();
 
-        contentValues.put(ListofLessons.COLUMN_ID,4);
-        contentValues.put(ListofLessons.COLUMN_DAY,"monday");
-        contentValues.put(ListofLessons.COLUMN_NLESS,4);
-        contentValues.put(ListofLessons.COLUMN_LESSON_ID,3);
-        contentValues.put(ListofLessons.COLUMN_AUD_ID,2);
-        contentValues.put(ListofLessons.COLUMN_TYPE_LESSON,1);
-        contentValues.put(ListofLessons.COLUMN_WHEN_TYPE,3);
-        newRowid=db.insert(ListofLessons.TABLE_NAME,null,contentValues);
+        contentValues.put(ListofLessonsEntry.COLUMN_ID,4);
+        contentValues.put(ListofLessonsEntry.COLUMN_DAY,"monday");
+        contentValues.put(ListofLessonsEntry.COLUMN_NLESS,4);
+        contentValues.put(ListofLessonsEntry.COLUMN_LESSON_ID,3);
+        contentValues.put(ListofLessonsEntry.COLUMN_AUD_ID,2);
+        contentValues.put(ListofLessonsEntry.COLUMN_TYPE_LESSON,1);
+        contentValues.put(ListofLessonsEntry.COLUMN_WHEN_TYPE,3);
+        newRowid=db.insert(ListofLessonsEntry.TABLE_NAME,null,contentValues);
         contentValues.clear();
 
-        contentValues.put(ListofLessons.COLUMN_ID,5);
-        contentValues.put(ListofLessons.COLUMN_DAY,"tuesday");
-        contentValues.put(ListofLessons.COLUMN_NLESS,2);
-        contentValues.put(ListofLessons.COLUMN_LESSON_ID,4);
-        contentValues.put(ListofLessons.COLUMN_AUD_ID,4);
-        contentValues.put(ListofLessons.COLUMN_TYPE_LESSON,1);
-        contentValues.put(ListofLessons.COLUMN_WHEN_TYPE,3);
-        newRowid=db.insert(ListofLessons.TABLE_NAME,null,contentValues);
+        contentValues.put(ListofLessonsEntry.COLUMN_ID,5);
+        contentValues.put(ListofLessonsEntry.COLUMN_DAY,"tuesday");
+        contentValues.put(ListofLessonsEntry.COLUMN_NLESS,2);
+        contentValues.put(ListofLessonsEntry.COLUMN_LESSON_ID,4);
+        contentValues.put(ListofLessonsEntry.COLUMN_AUD_ID,4);
+        contentValues.put(ListofLessonsEntry.COLUMN_TYPE_LESSON,1);
+        contentValues.put(ListofLessonsEntry.COLUMN_WHEN_TYPE,3);
+        newRowid=db.insert(ListofLessonsEntry.TABLE_NAME,null,contentValues);
         contentValues.clear();
 
-        contentValues.put(ListofLessons.COLUMN_ID,6);
-        contentValues.put(ListofLessons.COLUMN_DAY,"tuesday");
-        contentValues.put(ListofLessons.COLUMN_NLESS,3);
-        contentValues.put(ListofLessons.COLUMN_LESSON_ID,5);
-        contentValues.put(ListofLessons.COLUMN_AUD_ID,5);
-        contentValues.put(ListofLessons.COLUMN_TYPE_LESSON,2);
-        contentValues.put(ListofLessons.COLUMN_WHEN_TYPE,3);
-        newRowid=db.insert(ListofLessons.TABLE_NAME,null,contentValues);
+        contentValues.put(ListofLessonsEntry.COLUMN_ID,6);
+        contentValues.put(ListofLessonsEntry.COLUMN_DAY,"tuesday");
+        contentValues.put(ListofLessonsEntry.COLUMN_NLESS,3);
+        contentValues.put(ListofLessonsEntry.COLUMN_LESSON_ID,5);
+        contentValues.put(ListofLessonsEntry.COLUMN_AUD_ID,5);
+        contentValues.put(ListofLessonsEntry.COLUMN_TYPE_LESSON,2);
+        contentValues.put(ListofLessonsEntry.COLUMN_WHEN_TYPE,3);
+        newRowid=db.insert(ListofLessonsEntry.TABLE_NAME,null,contentValues);
         contentValues.clear();
 
-        contentValues.put(ListofLessons.COLUMN_ID,7);
-        contentValues.put(ListofLessons.COLUMN_DAY,"wednesday");
-        contentValues.put(ListofLessons.COLUMN_NLESS,4);
-        contentValues.put(ListofLessons.COLUMN_LESSON_ID,6);
-        contentValues.put(ListofLessons.COLUMN_AUD_ID,2);
-        contentValues.put(ListofLessons.COLUMN_TYPE_LESSON,1);
-        contentValues.put(ListofLessons.COLUMN_WHEN_TYPE,3);
-        newRowid=db.insert(ListofLessons.TABLE_NAME,null,contentValues);
+        contentValues.put(ListofLessonsEntry.COLUMN_ID,7);
+        contentValues.put(ListofLessonsEntry.COLUMN_DAY,"wednesday");
+        contentValues.put(ListofLessonsEntry.COLUMN_NLESS,4);
+        contentValues.put(ListofLessonsEntry.COLUMN_LESSON_ID,6);
+        contentValues.put(ListofLessonsEntry.COLUMN_AUD_ID,2);
+        contentValues.put(ListofLessonsEntry.COLUMN_TYPE_LESSON,1);
+        contentValues.put(ListofLessonsEntry.COLUMN_WHEN_TYPE,3);
+        newRowid=db.insert(ListofLessonsEntry.TABLE_NAME,null,contentValues);
         contentValues.clear();
 
-        contentValues.put(ListofLessons.COLUMN_ID,8);
-        contentValues.put(ListofLessons.COLUMN_DAY,"wednesday");
-        contentValues.put(ListofLessons.COLUMN_NLESS,5);
-        contentValues.put(ListofLessons.COLUMN_LESSON_ID,4);
-        contentValues.put(ListofLessons.COLUMN_AUD_ID,3);
-        contentValues.put(ListofLessons.COLUMN_TYPE_LESSON,3);
-        contentValues.put(ListofLessons.COLUMN_WHEN_TYPE,1);
-        newRowid=db.insert(ListofLessons.TABLE_NAME,null,contentValues);
+        contentValues.put(ListofLessonsEntry.COLUMN_ID,8);
+        contentValues.put(ListofLessonsEntry.COLUMN_DAY,"wednesday");
+        contentValues.put(ListofLessonsEntry.COLUMN_NLESS,5);
+        contentValues.put(ListofLessonsEntry.COLUMN_LESSON_ID,4);
+        contentValues.put(ListofLessonsEntry.COLUMN_AUD_ID,3);
+        contentValues.put(ListofLessonsEntry.COLUMN_TYPE_LESSON,3);
+        contentValues.put(ListofLessonsEntry.COLUMN_WHEN_TYPE,1);
+        newRowid=db.insert(ListofLessonsEntry.TABLE_NAME,null,contentValues);
         contentValues.clear();
 
-        contentValues.put(ListofLessons.COLUMN_ID,9);
-        contentValues.put(ListofLessons.COLUMN_DAY,"wednesday");
-        contentValues.put(ListofLessons.COLUMN_NLESS,6);
-        contentValues.put(ListofLessons.COLUMN_LESSON_ID,5);
-        contentValues.put(ListofLessons.COLUMN_AUD_ID,3);
-        contentValues.put(ListofLessons.COLUMN_TYPE_LESSON,3);
-        contentValues.put(ListofLessons.COLUMN_WHEN_TYPE,1);
-        newRowid=db.insert(ListofLessons.TABLE_NAME,null,contentValues);
+        contentValues.put(ListofLessonsEntry.COLUMN_ID,9);
+        contentValues.put(ListofLessonsEntry.COLUMN_DAY,"wednesday");
+        contentValues.put(ListofLessonsEntry.COLUMN_NLESS,6);
+        contentValues.put(ListofLessonsEntry.COLUMN_LESSON_ID,2);
+        contentValues.put(ListofLessonsEntry.COLUMN_AUD_ID,3);
+        contentValues.put(ListofLessonsEntry.COLUMN_TYPE_LESSON,3);
+        contentValues.put(ListofLessonsEntry.COLUMN_WHEN_TYPE,1);
+        newRowid=db.insert(ListofLessonsEntry.TABLE_NAME,null,contentValues);
         contentValues.clear();
 
-        contentValues.put(ListofLessons.COLUMN_ID,10);
-        contentValues.put(ListofLessons.COLUMN_DAY,"friday");
-        contentValues.put(ListofLessons.COLUMN_NLESS,3);
-        contentValues.put(ListofLessons.COLUMN_LESSON_ID,2);
-        contentValues.put(ListofLessons.COLUMN_AUD_ID,2);
-        contentValues.put(ListofLessons.COLUMN_TYPE_LESSON,1);
-        contentValues.put(ListofLessons.COLUMN_WHEN_TYPE,3);
-        newRowid=db.insert(ListofLessons.TABLE_NAME,null,contentValues);
+        contentValues.put(ListofLessonsEntry.COLUMN_ID,10);
+        contentValues.put(ListofLessonsEntry.COLUMN_DAY,"friday");
+        contentValues.put(ListofLessonsEntry.COLUMN_NLESS,3);
+        contentValues.put(ListofLessonsEntry.COLUMN_LESSON_ID,2);
+        contentValues.put(ListofLessonsEntry.COLUMN_AUD_ID,2);
+        contentValues.put(ListofLessonsEntry.COLUMN_TYPE_LESSON,1);
+        contentValues.put(ListofLessonsEntry.COLUMN_WHEN_TYPE,3);
+        newRowid=db.insert(ListofLessonsEntry.TABLE_NAME,null,contentValues);
         contentValues.clear();
-        contentValues.put(ListofLessons.COLUMN_ID,11);
-        contentValues.put(ListofLessons.COLUMN_DAY,"friday");
-        contentValues.put(ListofLessons.COLUMN_NLESS,4);
-        contentValues.put(ListofLessons.COLUMN_LESSON_ID,3);
-        contentValues.put(ListofLessons.COLUMN_AUD_ID,3);
-        contentValues.put(ListofLessons.COLUMN_TYPE_LESSON,3);
-        contentValues.put(ListofLessons.COLUMN_WHEN_TYPE,1);
-        newRowid=db.insert(ListofLessons.TABLE_NAME,null,contentValues);
+        contentValues.put(ListofLessonsEntry.COLUMN_ID,11);
+        contentValues.put(ListofLessonsEntry.COLUMN_DAY,"friday");
+        contentValues.put(ListofLessonsEntry.COLUMN_NLESS,4);
+        contentValues.put(ListofLessonsEntry.COLUMN_LESSON_ID,3);
+        contentValues.put(ListofLessonsEntry.COLUMN_AUD_ID,3);
+        contentValues.put(ListofLessonsEntry.COLUMN_TYPE_LESSON,3);
+        contentValues.put(ListofLessonsEntry.COLUMN_WHEN_TYPE,1);
+        newRowid=db.insert(ListofLessonsEntry.TABLE_NAME,null,contentValues);
         contentValues.clear();
-        contentValues.put(ListofLessons.COLUMN_ID,12);
-        contentValues.put(ListofLessons.COLUMN_DAY,"friday");
-        contentValues.put(ListofLessons.COLUMN_NLESS,5);
-        contentValues.put(ListofLessons.COLUMN_LESSON_ID,6);
-        contentValues.put(ListofLessons.COLUMN_AUD_ID,3);
-        contentValues.put(ListofLessons.COLUMN_TYPE_LESSON,3);
-        contentValues.put(ListofLessons.COLUMN_WHEN_TYPE,1);
-        newRowid=db.insert(ListofLessons.TABLE_NAME,null,contentValues);
+        contentValues.put(ListofLessonsEntry.COLUMN_ID,12);
+        contentValues.put(ListofLessonsEntry.COLUMN_DAY,"friday");
+        contentValues.put(ListofLessonsEntry.COLUMN_NLESS,5);
+        contentValues.put(ListofLessonsEntry.COLUMN_LESSON_ID,6);
+        contentValues.put(ListofLessonsEntry.COLUMN_AUD_ID,3);
+        contentValues.put(ListofLessonsEntry.COLUMN_TYPE_LESSON,3);
+        contentValues.put(ListofLessonsEntry.COLUMN_WHEN_TYPE,1);
+        newRowid=db.insert(ListofLessonsEntry.TABLE_NAME,null,contentValues);
         contentValues.clear();
 
     }
@@ -224,29 +223,29 @@ public class MainActivity extends AppCompatActivity {
         SQLiteDatabase db=mFeedReaderDbHelper.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
 
-        contentValues.put(AudContract.COLUMN_ID,1);
-        contentValues.put(AudContract.COLUMN_AUD,"ауд 38");
-        long newRowid=db.insert(AudContract.TABLE_NAME,null,contentValues);
+        contentValues.put(AudEntry.COLUMN_ID,1);
+        contentValues.put(AudEntry.COLUMN_AUD,"ауд 38");
+        long newRowid=db.insert(AudEntry.TABLE_NAME,null,contentValues);
         contentValues.clear();
 
-        contentValues.put(AudContract.COLUMN_ID,3);
-        contentValues.put(AudContract.COLUMN_AUD,"ОЦ-1");
-        newRowid=db.insert(AudContract.TABLE_NAME,null,contentValues);
+        contentValues.put(AudEntry.COLUMN_ID,3);
+        contentValues.put(AudEntry.COLUMN_AUD,"ОЦ-1");
+        newRowid=db.insert(AudEntry.TABLE_NAME,null,contentValues);
         contentValues.clear();
 
-        contentValues.put(AudContract.COLUMN_ID,4);
-        contentValues.put(AudContract.COLUMN_AUD,"ОЦ-3");
-        newRowid=db.insert(AudContract.TABLE_NAME,null,contentValues);
+        contentValues.put(AudEntry.COLUMN_ID,4);
+        contentValues.put(AudEntry.COLUMN_AUD,"ОЦ-3");
+        newRowid=db.insert(AudEntry.TABLE_NAME,null,contentValues);
         contentValues.clear();
 
-        contentValues.put(AudContract.COLUMN_ID,2);
-        contentValues.put(AudContract.COLUMN_AUD,"ауд 40");
-        newRowid=db.insert(AudContract.TABLE_NAME,null,contentValues);
+        contentValues.put(AudEntry.COLUMN_ID,2);
+        contentValues.put(AudEntry.COLUMN_AUD,"ауд 40");
+        newRowid=db.insert(AudEntry.TABLE_NAME,null,contentValues);
         contentValues.clear();
 
-        contentValues.put(AudContract.COLUMN_ID,5);
-        contentValues.put(AudContract.COLUMN_AUD,"ауд Л410");
-        newRowid=db.insert(AudContract.TABLE_NAME,null,contentValues);
+        contentValues.put(AudEntry.COLUMN_ID,5);
+        contentValues.put(AudEntry.COLUMN_AUD,"ауд Л410");
+        newRowid=db.insert(AudEntry.TABLE_NAME,null,contentValues);
         contentValues.clear();
 
 
@@ -257,40 +256,40 @@ public class MainActivity extends AppCompatActivity {
         ContentValues contentValues=new ContentValues();
 
 
-        contentValues.put(LessonContract.COLUMN_ID,1);
-        contentValues.put(LessonContract.COLUMN_NAME,"Методи захисту iнформацii комп'ютерних системах");
-        contentValues.put(LessonContract.COLUMN_TEACHER,"Скрипник I.А");
-        long newRowid = db.insert(LessonContract.TABLE_NAME, null, contentValues);
+        contentValues.put(LessonEntry.COLUMN_ID,1);
+        contentValues.put(LessonEntry.COLUMN_NAME,"Методи захисту iнформацii комп'ютерних системах");
+        contentValues.put(LessonEntry.COLUMN_TEACHER,"Скрипник I.А");
+        long newRowid = db.insert(LessonEntry.TABLE_NAME, null, contentValues);
         contentValues.clear();
 
-        contentValues.put(LessonContract.COLUMN_ID,2);
-        contentValues.put(LessonContract.COLUMN_NAME,"Сучасна прикл. алгебра та ООП та цив.захист");
-        contentValues.put(LessonContract.COLUMN_TEACHER,"Вербицький В.Г.");
-        newRowid = db.insert(LessonContract.TABLE_NAME, null, contentValues);
+        contentValues.put(LessonEntry.COLUMN_ID,2);
+        contentValues.put(LessonEntry.COLUMN_NAME,"Сучасна прикл. алгебра та ООП та цив.захист");
+        contentValues.put(LessonEntry.COLUMN_TEACHER,"Вербицький В.Г.");
+        newRowid = db.insert(LessonEntry.TABLE_NAME, null, contentValues);
         contentValues.clear();
 
-        contentValues.put(LessonContract.COLUMN_ID,3);
-        contentValues.put(LessonContract.COLUMN_NAME,"Ком'ютерне моделювання економiчних задач");
-        contentValues.put(LessonContract.COLUMN_TEACHER,"Вербицький В.Г.");
-        newRowid = db.insert(LessonContract.TABLE_NAME, null, contentValues);
+        contentValues.put(LessonEntry.COLUMN_ID,3);
+        contentValues.put(LessonEntry.COLUMN_NAME,"Ком'ютерне моделювання економiчних задач");
+        contentValues.put(LessonEntry.COLUMN_TEACHER,"Вербицький В.Г.");
+        newRowid = db.insert(LessonEntry.TABLE_NAME, null, contentValues);
         contentValues.clear();
 
-        contentValues.put(LessonContract.COLUMN_ID,4);
-        contentValues.put(LessonContract.COLUMN_NAME,"Нейрокомп'ютернi системи");
-        contentValues.put(LessonContract.COLUMN_TEACHER,"Безверхий А.I.");
-        newRowid = db.insert(LessonContract.TABLE_NAME, null, contentValues);
+        contentValues.put(LessonEntry.COLUMN_ID,4);
+        contentValues.put(LessonEntry.COLUMN_NAME,"Нейрокомп'ютернi системи");
+        contentValues.put(LessonEntry.COLUMN_TEACHER,"Безверхий А.I.");
+        newRowid = db.insert(LessonEntry.TABLE_NAME, null, contentValues);
         contentValues.clear();
 
-        contentValues.put(LessonContract.COLUMN_ID,5);
-        contentValues.put(LessonContract.COLUMN_NAME,"Професiйна iноземна мова");
-        contentValues.put(LessonContract.COLUMN_TEACHER,"Демiхова О.Г.");
-        newRowid = db.insert(LessonContract.TABLE_NAME, null, contentValues);
+        contentValues.put(LessonEntry.COLUMN_ID,5);
+        contentValues.put(LessonEntry.COLUMN_NAME,"Професiйна iноземна мова");
+        contentValues.put(LessonEntry.COLUMN_TEACHER,"Демiхова О.Г.");
+        newRowid = db.insert(LessonEntry.TABLE_NAME, null, contentValues);
         contentValues.clear();
 
-        contentValues.put(LessonContract.COLUMN_ID,6);
-        contentValues.put(LessonContract.COLUMN_NAME,"Технологiя створення WEB-застосункiв");
-        contentValues.put(LessonContract.COLUMN_TEACHER,"Попiвщий В.I.");
-        newRowid = db.insert(LessonContract.TABLE_NAME, null, contentValues);
+        contentValues.put(LessonEntry.COLUMN_ID,6);
+        contentValues.put(LessonEntry.COLUMN_NAME,"Технологiя створення WEB-застосункiв");
+        contentValues.put(LessonEntry.COLUMN_TEACHER,"Попiвщий В.I.");
+        newRowid = db.insert(LessonEntry.TABLE_NAME, null, contentValues);
         contentValues.clear();
 
 
@@ -303,19 +302,19 @@ public class MainActivity extends AppCompatActivity {
         SQLiteDatabase db=mFeedReaderDbHelper.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
 
-        contentValues.put(TypeLessonContract.COLUMN_ID,1);
-        contentValues.put(TypeLessonContract.COLUMN_TYPE,"лекция");
-        long newRowid=db.insert(TypeLessonContract.TABLE_NAME,null,contentValues);
+        contentValues.put(TypeLessonEntry.COLUMN_ID,1);
+        contentValues.put(TypeLessonEntry.COLUMN_TYPE,"лекция");
+        long newRowid=db.insert(TypeLessonEntry.TABLE_NAME,null,contentValues);
         contentValues.clear();
 
-        contentValues.put(TypeLessonContract.COLUMN_ID,2);
-        contentValues.put(TypeLessonContract.COLUMN_TYPE,"практика");
-        newRowid=db.insert(TypeLessonContract.TABLE_NAME,null,contentValues);
+        contentValues.put(TypeLessonEntry.COLUMN_ID,2);
+        contentValues.put(TypeLessonEntry.COLUMN_TYPE,"практика");
+        newRowid=db.insert(TypeLessonEntry.TABLE_NAME,null,contentValues);
         contentValues.clear();
 
-        contentValues.put(TypeLessonContract.COLUMN_ID,3);
-        contentValues.put(TypeLessonContract.COLUMN_TYPE,"лабораторная работа");
-        newRowid=db.insert(TypeLessonContract.TABLE_NAME,null,contentValues);
+        contentValues.put(TypeLessonEntry.COLUMN_ID,3);
+        contentValues.put(TypeLessonEntry.COLUMN_TYPE,"лабораторная работа");
+        newRowid=db.insert(TypeLessonEntry.TABLE_NAME,null,contentValues);
         contentValues.clear();
     }
 
@@ -323,19 +322,19 @@ public class MainActivity extends AppCompatActivity {
         SQLiteDatabase db = mFeedReaderDbHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
-        contentValues.put(WhenTypeContract.COLUMN_ID, 1);
-        contentValues.put(WhenTypeContract.COLUMN_TYPE, "числитель");
-        long newRowid = db.insert(WhenTypeContract.TABLE_NAME, null, contentValues);
+        contentValues.put(WhenTypeEntry.COLUMN_ID, 1);
+        contentValues.put(WhenTypeEntry.COLUMN_TYPE, "числитель");
+        long newRowid = db.insert(WhenTypeEntry.TABLE_NAME, null, contentValues);
         contentValues.clear();
 
-        contentValues.put(WhenTypeContract.COLUMN_ID, 2);
-        contentValues.put(WhenTypeContract.COLUMN_TYPE, "знаменатель");
-        newRowid = db.insert(WhenTypeContract.TABLE_NAME, null, contentValues);
+        contentValues.put(WhenTypeEntry.COLUMN_ID, 2);
+        contentValues.put(WhenTypeEntry.COLUMN_TYPE, "знаменатель");
+        newRowid = db.insert(WhenTypeEntry.TABLE_NAME, null, contentValues);
         contentValues.clear();
 
-        contentValues.put(WhenTypeContract.COLUMN_ID, 3);
-        contentValues.put(WhenTypeContract.COLUMN_TYPE, "числитель/знаменатель");
-        newRowid = db.insert(WhenTypeContract.TABLE_NAME, null, contentValues);
+        contentValues.put(WhenTypeEntry.COLUMN_ID, 3);
+        contentValues.put(WhenTypeEntry.COLUMN_TYPE, "числитель/знаменатель");
+        newRowid = db.insert(WhenTypeEntry.TABLE_NAME, null, contentValues);
         contentValues.clear();
 
 
@@ -345,47 +344,47 @@ public class MainActivity extends AppCompatActivity {
         SQLiteDatabase db = mFeedReaderDbHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
-        contentValues.put(RingsContract.COLUMN_ID, 1);
-        contentValues.put(RingsContract.COLUMN_TIME_START, "8:45");
-        contentValues.put(RingsContract.COLUMN_TIME_END, "10:05");
-        long newRowid = db.insert(RingsContract.TABLE_NAME, null, contentValues);
+        contentValues.put(RingsEntry.COLUMN_ID, 1);
+        contentValues.put(RingsEntry.COLUMN_TIME_START, "8:45");
+        contentValues.put(RingsEntry.COLUMN_TIME_END, "10:05");
+        long newRowid = db.insert(RingsEntry.TABLE_NAME, null, contentValues);
         contentValues.clear();
 
-        contentValues.put(RingsContract.COLUMN_ID, 2);
-        contentValues.put(RingsContract.COLUMN_TIME_START, "10:15");
-        contentValues.put(RingsContract.COLUMN_TIME_END, "11:35");
-        newRowid = db.insert(RingsContract.TABLE_NAME, null, contentValues);
+        contentValues.put(RingsEntry.COLUMN_ID, 2);
+        contentValues.put(RingsEntry.COLUMN_TIME_START, "10:15");
+        contentValues.put(RingsEntry.COLUMN_TIME_END, "11:35");
+        newRowid = db.insert(RingsEntry.TABLE_NAME, null, contentValues);
         contentValues.clear();
 
-        contentValues.put(RingsContract.COLUMN_ID, 3);
-        contentValues.put(RingsContract.COLUMN_TIME_START, "11:45");
-        contentValues.put(RingsContract.COLUMN_TIME_END, "13:05");
-        newRowid = db.insert(RingsContract.TABLE_NAME, null, contentValues);
+        contentValues.put(RingsEntry.COLUMN_ID, 3);
+        contentValues.put(RingsEntry.COLUMN_TIME_START, "11:45");
+        contentValues.put(RingsEntry.COLUMN_TIME_END, "13:05");
+        newRowid = db.insert(RingsEntry.TABLE_NAME, null, contentValues);
         contentValues.clear();
 
-        contentValues.put(RingsContract.COLUMN_ID, 4);
-        contentValues.put(RingsContract.COLUMN_TIME_START, "13:35");
-        contentValues.put(RingsContract.COLUMN_TIME_END, "14:55");
-        newRowid = db.insert(RingsContract.TABLE_NAME, null, contentValues);
+        contentValues.put(RingsEntry.COLUMN_ID, 4);
+        contentValues.put(RingsEntry.COLUMN_TIME_START, "13:35");
+        contentValues.put(RingsEntry.COLUMN_TIME_END, "14:55");
+        newRowid = db.insert(RingsEntry.TABLE_NAME, null, contentValues);
         contentValues.clear();
 
-        contentValues.put(RingsContract.COLUMN_ID, 5);
-        contentValues.put(RingsContract.COLUMN_TIME_START, "15:05");
-        contentValues.put(RingsContract.COLUMN_TIME_END, "16:25");
-        newRowid = db.insert(RingsContract.TABLE_NAME, null, contentValues);
+        contentValues.put(RingsEntry.COLUMN_ID, 5);
+        contentValues.put(RingsEntry.COLUMN_TIME_START, "15:05");
+        contentValues.put(RingsEntry.COLUMN_TIME_END, "16:25");
+        newRowid = db.insert(RingsEntry.TABLE_NAME, null, contentValues);
         contentValues.clear();
 
 
-        contentValues.put(RingsContract.COLUMN_ID, 6);
-        contentValues.put(RingsContract.COLUMN_TIME_START, "16:35");
-        contentValues.put(RingsContract.COLUMN_TIME_END, "17:55");
-        newRowid = db.insert(RingsContract.TABLE_NAME, null, contentValues);
+        contentValues.put(RingsEntry.COLUMN_ID, 6);
+        contentValues.put(RingsEntry.COLUMN_TIME_START, "16:35");
+        contentValues.put(RingsEntry.COLUMN_TIME_END, "17:55");
+        newRowid = db.insert(RingsEntry.TABLE_NAME, null, contentValues);
         contentValues.clear();
 
-        contentValues.put(RingsContract.COLUMN_ID, 7);
-        contentValues.put(RingsContract.COLUMN_TIME_START, "18:05");
-        contentValues.put(RingsContract.COLUMN_TIME_END, "19:25");
-        newRowid = db.insert(RingsContract.TABLE_NAME, null, contentValues);
+        contentValues.put(RingsEntry.COLUMN_ID, 7);
+        contentValues.put(RingsEntry.COLUMN_TIME_START, "18:05");
+        contentValues.put(RingsEntry.COLUMN_TIME_END, "19:25");
+        newRowid = db.insert(RingsEntry.TABLE_NAME, null, contentValues);
         contentValues.clear();
     }
 //endregion
@@ -519,10 +518,10 @@ public class MainActivity extends AppCompatActivity {
             ArrayList<String> c=new ArrayList<>();//список string в которой содержиться get(1)-lesson.name+(get(2) -aud.aud)+(get(3)- typelesson.type)
             for(int i=0;i<list.size();i++)
             {
-                b.add(list.get(i).get(ListofLessons.COLUMN_NLESS));
-                c.add(list.get(i).get(LessonContract.COLUMN_NAME)+"\n"+
-                        list.get(i).get(AudContract.COLUMN_AUD)+"\n"+
-                        list.get(i).get(TypeLessonContract.COLUMN_TYPE));
+                b.add(list.get(i).get(ListofLessonsEntry.COLUMN_NLESS));
+                c.add(list.get(i).get(LessonEntry.COLUMN_NAME)+"\n"+
+                        list.get(i).get(AudEntry.COLUMN_AUD)+"\n"+
+                        list.get(i).get(TypeLessonEntry.COLUMN_TYPE));
             }
             locallistview.setAdapter(new CustomAdapter( getActivity(),b,c));
         }
@@ -530,6 +529,7 @@ public class MainActivity extends AppCompatActivity {
         {
             ArrayList<HashMap<String,String>> a=new ArrayList<>();
             FeedReaderDbHelper dbHelper=new FeedReaderDbHelper(getContext());
+            //TODO поменять запрос,
             Cursor c=dbHelper.getReadableDatabase().rawQuery("select listoflessons.numberlesson,lesson.name, " +
                     "aud.aud,typelesson.type_lesson,rings.time_start,rings.time_end,lesson.teacher,when_type.type_week,listoflessons.day " +
                     "from listoflessons   join  aud on listoflessons.id_aud=aud.id " +

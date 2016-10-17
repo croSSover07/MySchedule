@@ -7,12 +7,12 @@ import android.widget.TextView;
 
 import java.util.HashMap;
 
-import app.umf.myschedule.Contracts.AudContract;
-import app.umf.myschedule.Contracts.LessonContract;
-import app.umf.myschedule.Contracts.ListofLessons;
-import app.umf.myschedule.Contracts.RingsContract;
-import app.umf.myschedule.Contracts.TypeLessonContract;
-import app.umf.myschedule.Contracts.WhenTypeContract;
+import app.umf.myschedule.Contracts.AudContract.AudEntry;
+import app.umf.myschedule.Contracts.LessonContract.LessonEntry;
+import app.umf.myschedule.Contracts.ListofLessonsContracts.ListofLessonsEntry;
+import app.umf.myschedule.Contracts.RingsContract.RingsEntry;
+import app.umf.myschedule.Contracts.TypeLessonContract.TypeLessonEntry;
+import app.umf.myschedule.Contracts.WhenTypeContract.WhenTypeEntry;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -38,14 +38,14 @@ public class DetailActivity extends AppCompatActivity {
         HashMap<String,String> hashMap=(HashMap<String,String >) getIntent().getSerializableExtra("infohashmap");
         //TODO данные из intent.extra , create
 
-        textView_aud.setText(hashMap.get(AudContract.COLUMN_AUD));
-        textView_day.setText(hashMap.get(ListofLessons.COLUMN_DAY));
-        textView_name.setText(hashMap.get(LessonContract.COLUMN_NAME));
-        textView_number.setText(hashMap.get(ListofLessons.COLUMN_NLESS));
-        textView_teacher.setText(hashMap.get(LessonContract.COLUMN_TEACHER));
-        textView_time.setText(hashMap.get(RingsContract.COLUMN_TIME_START)+"-"+hashMap.get(RingsContract.COLUMN_TIME_END));
-        textView_type.setText(hashMap.get(TypeLessonContract.COLUMN_TYPE));
-        textView_weektype.setText(hashMap.get(WhenTypeContract.COLUMN_TYPE));
+        textView_aud.setText(hashMap.get(AudEntry.COLUMN_AUD));
+        textView_day.setText(hashMap.get(ListofLessonsEntry.COLUMN_DAY));
+        textView_name.setText(hashMap.get(LessonEntry.COLUMN_NAME));
+        textView_number.setText(hashMap.get(ListofLessonsEntry.COLUMN_NLESS));
+        textView_teacher.setText(hashMap.get(LessonEntry.COLUMN_TEACHER));
+        textView_time.setText(hashMap.get(RingsEntry.COLUMN_TIME_START)+"-"+hashMap.get(RingsEntry.COLUMN_TIME_END));
+        textView_type.setText(hashMap.get(TypeLessonEntry.COLUMN_TYPE));
+        textView_weektype.setText(hashMap.get(WhenTypeEntry.COLUMN_TYPE));
     }
 
 }
